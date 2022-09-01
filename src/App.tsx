@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import './App.css'
+import { Card } from './Card'
 
 function App() {
   const [dragging, setDragging] = useState(false)
@@ -44,7 +45,7 @@ function App() {
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}>
-        <div className='node'>node</div>
+        <Card />
       </div>
     </>
   )
