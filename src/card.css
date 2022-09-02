@@ -1,9 +1,15 @@
 .card {
   width: 100px;
   height: 100px;
-  border: 1px solid blue;
-  margin: 8px;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-content {
+  width: 100px;
+  border: 1px solid blue;
 }
 
 .card-wrapper {
@@ -15,4 +21,9 @@
 .children {
   display: flex;
   align-items: flex-start;
+}
+
+svg {
+  border: 1px solid red;
+  width: 100%;
 }
