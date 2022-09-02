@@ -1,14 +1,17 @@
 .card {
-  position: relative;
   width: 100px;
   height: 100px;
   border: 1px solid blue;
+  margin: 8px;
 }
 
-.svg-wrapper {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 1px solid green;
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.children {
+  display: flex;
+  align-items: flex-start;
 }

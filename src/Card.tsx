@@ -1,15 +1,32 @@
+import { FC, useState } from 'react';
 import './card.css';
+import { CardItem } from './mock';
 
+type Props = {
+  id: number;
+  title: string;
+  children: CardItem[];
+}
 
-
-export const Card = () => {
-
+export const Card: FC<Props> = (props) => {
+  const [showChildren, setShowChildren] = useState(false);
+  const toggle = () => {
+    setShowChildren(!showChildren);
+  }
   return (
     <>
-      <div className="card">node
-        <svg className="svg-wrapper">
-          <path d="M0 0 L500 500" stroke='red'></path>
-        </svg>
+      <div className="card-wrapper">
+        <div className='card'>
+          {props.title}
+          <button onClick={toggle}>+</button>
+        </div>
+        {showChildren ?
+          <div className="children">
+            {props.children && props.children.map(item => {
+              return <Card key={item.id} id={item.id} title={item.title} children={item.children} />
+            })}
+          </div> : null
+        }
       </div>
     </>
   )
