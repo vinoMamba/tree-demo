@@ -9,14 +9,14 @@ function App() {
     const [position, setPosition] = useState<[number, number]>([0, 0])
     const wrapperRef = useRef<HTMLDivElement | null>(null)
     const handleMouseDown = (e: React.MouseEvent) => {
-        if (e.target === wrapperRef.current) {
+        //如果点击的是card，不触发拖拽
+        if (!(e.target instanceof HTMLElement && e.target.classList.contains('card'))) {
             setDragging(true)
             setPosition([e.pageX, e.pageY])
         }
     }
     const handleMouseMove = (e: React.MouseEvent) => {
         if (dragging) {
-            console.log(e)
             const x = e.pageX
             const y = e.pageY
             const deltaX = x - position[0]
