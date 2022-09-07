@@ -8,16 +8,6 @@ type Props = {
   children: CardItem[];
 }
 
-
-const CreateConnectLine = () => {
-  return (
-    <svg className="connect-line" height="20">
-      <line x1="50%" y1="0" x2="50%" y2="100%" stroke="black" strokeWidth="2" />
-    </svg>
-  )
-}
-
-
 export const Card: FC<Props> = (props) => {
   const [showChildren, setShowChildren] = useState(false);
   const toggle = () => {
@@ -27,7 +17,6 @@ export const Card: FC<Props> = (props) => {
     <>
       <div className="card-wrapper">
         <div className='card'>
-          <CreateConnectLine />
           <div className='card-content'>
             {props.title}
             <button onClick={() => toggle()}>+</button>
